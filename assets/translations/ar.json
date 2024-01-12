@@ -1,0 +1,133 @@
+{
+  "asansafar": "Asan Safar",
+
+  "welcome message" : "إبحث في جميع الأماكن الشهيرة في كردستان والعالم بأسهل طريقة",
+  "welcome to" : "مرحبا بك في",
+
+  "intro-title1" : "لا يهم أين أنت",
+  "intro-title2" : "استكشاف الأماكن القريبة",
+  "intro-title3" : "إرشادات السفر",
+  "intro-description1" : "معلومات مهمة حول وجهتك قبل وأثناء رحلتك.",
+  "intro-description2" : "يتم وضع علامة على جميع مناطق الجذب السياحي على الخريطة",
+  "intro-description3" : "ابحث عن المجموعات السياحية واشترك في جولاتك المفضلة...",
+  "get started" : "البدء",
+
+  "explore country" : "بحث عن كردستان",
+  "search places" : "بحث في الأماكن",
+  "popular places" : "الأماكن الشهيرة",
+
+  "recently added" : "إضافات جديدة",
+  "recommended places" : "المواقع المقترحة",
+
+  "people like this" : "المفضلة",
+  "todo" : "المرافق",
+  "you may also like" : "قد ترغب هذه، أيضا",
+  "travel guide" : "مرشد سياحي",
+  "nearby hotels" : "الفنادق القريبة",
+  "nearby restaurants" : "المطاعم القريبة",
+  "steps" : "الخطوات",
+  "estimated cost = " : "التكلفة التقديرية =",
+  "distance = " : "فضاء =",
+  "no hotels found" : "لم يتم العثور على فنادق",
+  "no restaurants found" : "لم يتم العثور على مطعم .",
+  "we didn't find any nearby hotels in this area" : "لم نعثر على أي فنادق قريبة في هذه المنطقة",
+  "we didn't find any nearby restaurants in this area" : "لم نعثر على أي مطاعم قريبة في هذه المنطقة",
+  "user reviews" : "تعليقات من المستخدمين",
+
+
+  "write a review" : "أكتب رأيك",
+  "no internet" : "لا يوجد اتصال بالإنترنت!",
+  "no comments found" : "لم يتم العثور على تعليقات",
+  "be the first to comment" : "كن أول من يعلق",
+
+  "recently added places" : "المواقع المضافة مؤخرا",
+
+
+  "search & explore" : "استكشاف الأماكن",
+  "recent searchs" : "عمليات البحث الأخيرة",
+  "search for places" : "استكشاف المواقع",
+  "search-description" :  "أنت لم تبحث عن أي شيء بعد. جربه الآن - سنساعدك!",
+  "we have found" : "لقد وجدنا ذلك",
+  "no places found" : "لم يتم العثور على أي موقع",
+  "try again" : "دووبارە هەوڵبدەرەوە!",
+
+
+
+  "states" : "مدن",
+  "blogs" : "الرحلات الجوية",
+
+
+  "bookmarks" : "المحدد",
+  "saved places" : "Saved Places",
+  "saved blogs" : "المواقع المحفوظة",
+  "sign in first" : "سجل الدخول أولا",
+  "sign in to save your favourite places here" : "قم بتسجيل الدخول لحفظ أماكنك المفضلة هنا",
+  "sign in to save your favourite blogs here" : "قم بتسجيل الدخول لحفظ رحلاتك المفضلة هنا",
+  "no blogs found" : "لم يتم العثور على رحلات جوية",
+  "save your favourite places here" : "احفظ أماكنك المفضلة هنا",
+  "save your favourite blogs here" : "احفظ رحلاتك المفضلة هنا",
+
+
+
+  "skip" : "يتخطى",
+  "check your internet connection!" : "تأكد من اتصالك بالإنترنت!",
+  "something is wrong. please try again." : "هنالك خطأ. حاول مرة اخرى.",
+
+
+  "sign in" : "دخول المدخل",
+  "cancel" : "يزيل",
+
+  "no sign in title" : "قم بتسجيل الدخول أولا للوصول إلى هذا القسم",
+  "no sign in subtitle" : "لم تقم بتسجيل الدخول بعد. الرجاء تسجيل الدخول لفتح هذا القسم",
+
+
+
+  "comments" : "تعليقات",
+  "write a comment" : "أكتب تعليقا",
+
+
+
+  "no content" : "هیچ ناوەڕۆکێک نەدۆزراوەتەوە",
+  "delete?" : "يمسح؟",
+  "delete from database?" : "هل تريد حذف هذا البند؟",
+
+
+  "notifications" : "تحذيرات",
+  "notification details" : "تفاصيل التحذير",
+
+
+  "profile" : "حساب",
+  "general setting" : "التنظيم العام",
+  "login" : "تسجيل الدخول",
+  "get notifications" : "تحذيرات .",
+  "contact us" : "اتصل بنا",
+  "rate this app" : "قيم هذا التطبيق",
+  "licence" : "رخصة",
+  "privacy policy" : "سياسة الخصوصية",
+  "about us" : "معلومات عنا",
+  "logout" : "تسجيل خروج",
+  "edit profile" : "تعديل حسابك",
+  "update profile" : "تجديد حسابك",
+  "updated successfully" : "تم التحديث بنجاح",
+  "enter new name" : "أدخل اسمًا جديدًا",
+
+  "logout title" : "هل تريد الخروج من التطبيق؟",
+  "yes" : "نعم",
+  "no" : "لا",
+
+  "language" : "اللغة",
+  "select language" : "تحديد لغة",
+
+
+  "register": "يسجل",
+  "price": "سعر",
+
+  "specialState1":"turkey",
+  "specialState2": "المملكة العربية السعودية",
+
+  "About Me": "معلومات عنا",
+
+  "place name": "اسم مكان",
+  "delete account": "حذف الحساب"
+
+}

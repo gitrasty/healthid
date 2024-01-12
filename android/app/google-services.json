@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "869176772739",
+    "project_id": "health-id-99bd5",
+    "storage_bucket": "health-id-99bd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869176772739:android:be1967cab025895108b3b6",
+        "android_client_info": {
+          "package_name": "com.rasty.healthid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiEetnxd6JevCnGyeZmeEYC5m_2HlE3bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
