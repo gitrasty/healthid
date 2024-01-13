@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:healthid/pages/HomePage.dart';
+import 'package:healthid/pages/patients/profile.dart';
 
 
 class BottomBar extends StatefulWidget {
@@ -16,8 +17,7 @@ class _BottomBarState extends State<BottomBar> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Text('Index 1: Schedual'),
-    Text('Index 2: Report'),
-    Text('Index 3: Profile'),
+   profile_patient()
   ];
 
   void _onItemTapped(int index) {
@@ -43,18 +43,17 @@ class _BottomBarState extends State<BottomBar> {
           BottomNavigationBarItem(
 
             icon:  Icon(Icons.list_alt),
-            label: 'Schedule',
+            label: 'Service',
           ),
           BottomNavigationBarItem(
-
-            icon:  Icon(FontAwesomeIcons.chartSimple),
-            label: 'Report',
-          ),
-          BottomNavigationBarItem(
-
-            icon:  Icon(Icons.account_circle),
+            icon:  Icon(FontAwesomeIcons.user),
             label: 'Profile',
           ),
+          // BottomNavigationBarItem(
+          //
+          //   icon:  Icon(Icons.account_circle),
+          //   label: 'Profile',
+          // ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.black,

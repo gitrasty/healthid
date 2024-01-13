@@ -39,8 +39,9 @@ class _signupState extends State<signup> {
     final DateTime? picked = await showDatePicker(
         context: context,
         initialDate: selectedDate,
-        firstDate: DateTime(2015, 8),
-        lastDate: DateTime(2101));
+        firstDate: new DateTime(1900),
+        lastDate: new DateTime(2025)
+    );
     if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
@@ -298,8 +299,8 @@ class _signupState extends State<signup> {
                                         .updateProfile(displayName: name.text);
                                     await user.reload();
                                     user = auth.currentUser;
-                                    FirebaseAuthHelper.usersFirestore(
-                                        user!, widget.account);
+                                    FirebaseAuthHelper.usersFirestore(user:
+                                        user!,account:  widget.account,Birthday: selectedDate,city: city);
 
                                     if (user != null) {
                                       nextScreen(context, HomePage());

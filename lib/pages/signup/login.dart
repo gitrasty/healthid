@@ -2,12 +2,14 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:healthid/bloc/signup.dart';
 import 'package:healthid/component/config.dart';
 import 'package:healthid/pages/signup/signup.dart';
 import 'package:healthid/pages/welcome/welcomeScreen.dart';
 import 'package:healthid/windget/textfild.dart';
 
 import '../../component/next_screen.dart';
+import '../../windget/textfildPassword.dart';
 import '../welcome/DelayedAnimation.dart';
 
 class login extends StatefulWidget {
@@ -18,29 +20,8 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  final List<String> listcity = [
-    "سلێمانی",
-    "هەولێر",
-    "دهۆک",
-  ];
-  String? selectcity;
-  var city;
-  TextEditingController name = TextEditingController();
-
-  DateTime selectedDate = DateTime.now();
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: selectedDate,
-        firstDate: DateTime(2015, 8),
-        lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate) {
-      setState(() {
-        selectedDate = picked;
-      });
-    }
-  }
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +49,11 @@ class _loginState extends State<login> {
                     backgroundColor: Colors.grey[100],
                     child: Center(
                         child: Image.asset(
-                          'assets/images/heart.png',
-                          fit: BoxFit.cover,
-                          height: 70,
-                          width: 70,
-                        )),
+                      'assets/images/heart.png',
+                      fit: BoxFit.cover,
+                      height: 70,
+                      width: 70,
+                    )),
                     radius: 50.0,
                   )),
             ),
@@ -87,15 +68,17 @@ class _loginState extends State<login> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30)
-                    // BorderRadius.only(
-                    //   topLeft: Radius.circular(20),
-                    //   topRight: Radius.circular(20),
-                    // ),
-                  ),
+                      // BorderRadius.only(
+                      //   topLeft: Radius.circular(20),
+                      //   topRight: Radius.circular(20),
+                      // ),
+                      ),
                   child: Column(
                     // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 90,),
+                      SizedBox(
+                        height: 90,
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
@@ -104,9 +87,50 @@ class _loginState extends State<login> {
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      CustomTextField(controller: name, hintText: 'Email',prefixIcon: Icons.email,),
-                      CustomTextField(controller: name, hintText: 'Password',prefixIcon: Icons.password,),
-                       SizedBox(
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Invaild Email';
+                            }
+                          },
+                          controller: email,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            fillColor: Colors.white,
+                            focusedErrorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: BorderSide(color: Colors.red)),
+                            errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: BorderSide(color: Colors.red)),
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: Colors.black,
+                            ),
+                            hintText: 'Email',
+                            hintStyle: TextStyle(color: Colors.grey),
+                            filled: true,
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: BorderSide(color: backgroundColor)),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: BorderSide(color: backgroundColor)),
+                          ),
+                        ),
+                      ),
+                      textfildPassword(
+                        controller: password,
+                        hintText: 'Password',
+                        prefixIcon: Icons.password,
+                      ),
+                      SizedBox(
                         height: 20,
                       ),
                       Padding(
@@ -126,7 +150,12 @@ class _loginState extends State<login> {
                             child: new Text('Login',
                                 style: new TextStyle(
                                     fontSize: 18.0, color: Colors.white)),
-                            onPressed: () {},
+                            onPressed: () {
+                              FirebaseAuthHelper.signInUsingEmailPassword(
+                                  email: email.text,
+                                  password: password.text,
+                                  context: context);
+                            },
                           ),
                         ),
                       ),
@@ -216,7 +245,8 @@ class _loginState extends State<login> {
                       ),
                       Center(
                         child: TextButton(
-                          onPressed: () {                            nextScreen(context, welcomeScreen());
+                          onPressed: () {
+                            nextScreen(context, welcomeScreen());
                           },
                           child: Text(
                             "I dont have Account",

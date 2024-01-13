@@ -376,7 +376,8 @@ class SignInBloc extends ChangeNotifier {
     FirebaseFirestore.instance.collection('users').doc(_uid)
         .update({
       'name': newName,
-      'image url' : newImageUrl
+      'image url' : newImageUrl,
+
     });
 
     sp.setString('name', newName);
