@@ -74,10 +74,10 @@ class _signupState extends State<signup> {
                   elevation: 8.0,
                   shape: CircleBorder(),
                   child: CircleAvatar(
-                    backgroundColor: Colors.grey[100],
+                    backgroundColor: Colors.white,//Colors.grey[100],
                     child: Center(
                         child: Image.asset(
-                      'assets/images/heart.png',
+                          'assets/logo.png',
                       fit: BoxFit.cover,
                       height: 70,
                       width: 70,

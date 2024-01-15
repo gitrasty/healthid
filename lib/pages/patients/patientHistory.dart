@@ -44,7 +44,7 @@ class _patientHistoreState extends State<patientHistore> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('patientHistore'),
+          title: Text('patient history'),
           centerTitle: true,
         ),
         body: SingleChildScrollView(

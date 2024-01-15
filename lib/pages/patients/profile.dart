@@ -1,7 +1,6 @@
-
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:healthid/pages/welcome/welcomeScreen.dart';
 
 class profile_patient extends StatefulWidget {
   const profile_patient({super.key});
@@ -13,29 +12,85 @@ class profile_patient extends StatefulWidget {
 class _profile_patientState extends State<profile_patient> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(
-
+    return Scaffold(
       backgroundColor: Colors.white,
-      elevation: 0,
-    ),
-    body: Column(children: [
-      CircleAvatar(backgroundColor: Colors.blueAccent,),
-
-      Text('Name'),
-
-      Divider(),
-
-      ListTile(title: Text('Edite Profile'),
-      trailing: Icon(Icons.account_circle),
+      appBar: AppBar(
+        title: Text('Profile'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
-      Divider(),
-
-      ListTile(title: Text('Language'),
-        trailing: Icon(Icons.language),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+          CircleAvatar(
+            backgroundColor: Colors.blueAccent,
+            backgroundImage: AssetImage('assets/images/user.png'),
+            radius: 50,
+          ),
+          Text('Rastgo abubakr'),
+          SizedBox(
+            height: 50,
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Edite Profile'),
+            trailing: Icon(Icons.account_circle_outlined),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Language'),
+            trailing: Icon(Icons.language),
+          ),
+          ListTile(
+            title: Text('About'),
+            trailing: Icon(Icons.info_outline),
+          ),
+          ListTile(
+            title: Text('contact us'),
+            trailing: Icon(Icons.email_outlined),
+          ),
+          ListTile(
+            title: Text('Log out'),
+            trailing: Icon(Icons.login),
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: Text(
+                    'are you logout'),
+                actions: [
+                  TextButton(
+                      onPressed: () => _signOut(),
+                      child: Text('yes')),
+                  TextButton(
+                      onPressed: () =>
+                          Navigator.of(context).pop(),
+                      child: Text('no'))
+                ],
+              ),
+            );
+            },
+          ),
+        ],
       ),
-
-    ],),
-
     );
+  }
+  Future<void> _signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => welcomeScreen(
+            ),
+          ));
+      // print("logOut");
+    } catch (e) {
+      // print(e.toString());
+    }
   }
 }

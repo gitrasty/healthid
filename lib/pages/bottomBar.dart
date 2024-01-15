@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:healthid/pages/HomePage.dart';
 import 'package:healthid/pages/patients/profile.dart';
+import 'package:healthid/pages/service/servicePage.dart';
 
 
 class BottomBar extends StatefulWidget {
@@ -16,7 +17,7 @@ class _BottomBarState extends State<BottomBar> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text('Index 1: Schedual'),
+    servicePage(),
    profile_patient()
   ];
 

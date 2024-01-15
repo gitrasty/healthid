@@ -58,15 +58,15 @@ class _welcomeScreenState extends State<welcomeScreen>
                       elevation: 8.0,
                       shape: CircleBorder(),
                       child: CircleAvatar(
-                        backgroundColor: Colors.grey[100],
+                        backgroundColor: Colors.white,//Colors.grey[100],
                         child: Center(
                             child: Image.asset(
-                          'assets/images/heart.png',
+                         'assets/logo.png',// 'assets/images/heart.png',
                           fit: BoxFit.cover,
-                          height: 70,
-                          width: 70,
+                          height: 80,
+                          width: 80,
                         )),
-                        radius: 50.0,
+                        radius: 60.0,
                       )),
                 ),
                 SizedBox(
