@@ -6,19 +6,21 @@ import 'package:healthid/pages/HomePage.dart';
 import 'package:healthid/pages/patients/profile.dart';
 import 'package:healthid/pages/service/servicePage.dart';
 
-class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
+import 'homeDoctor.dart';
+
+class BottomBar_Doctor extends StatefulWidget {
+  const BottomBar_Doctor({super.key});
 
   @override
-  State<BottomBar> createState() => _BottomBarState();
+  State<BottomBar_Doctor> createState() => _BottomBar_DoctorState();
 }
 
-class _BottomBarState extends State<BottomBar> {
+class _BottomBar_DoctorState extends State<BottomBar_Doctor> {
 
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-     HomePage(),
+    homeDoctor(),
     servicePage(),
     profile_patient()
   ];

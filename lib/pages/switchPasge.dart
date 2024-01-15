@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:healthid/pages/bottomBar.dart';
 import 'package:healthid/pages/welcome/welcomeScreen.dart';
+
+import 'doctor/bottomBar_Doctor.dart';
 
 
 class switchPage extends StatefulWidget {
@@ -13,17 +16,27 @@ class switchPage extends StatefulWidget {
 
 class _switchPageState extends State<switchPage> {
   User? _user;
+  User? user =  FirebaseAuth.instance.currentUser;
 
   Future<void> _checkCourentUser() async {
-    User? user = await FirebaseAuth.instance.currentUser;
     _updateuser(user);
   }
-
+  var switchlogin='';
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _checkCourentUser();
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(user!.uid)
+        .snapshots()
+        .listen((datasnapshot) {
+      setState(() {
+        switchlogin = datasnapshot.data()!['account'];
+      });
+    });
+
   }
 
   void _updateuser(User? user) {
@@ -37,9 +50,16 @@ class _switchPageState extends State<switchPage> {
     if (_user == null) {
       return welcomeScreen(
        );
-    }
-    return BottomBar();
+    }else {
+      if (switchlogin == 'patient') {
 
-    // home_page(onSignOut: () => _updateuser(null));
+        return BottomBar();
+      }else if (switchlogin == 'doctor') {
+        return BottomBar_Doctor();
+      }
+
+      return BottomBar();
+  //    return BottomBar();
+    }
   }
 }

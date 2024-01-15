@@ -8,6 +8,7 @@ import 'package:healthid/pages/patients/patientHistory.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -37,6 +38,12 @@ class HomePage extends StatelessWidget {
           const UpcomingAppointments()
         ],
       ),
+
+      floatingActionButton: FloatingActionButton(onPressed: () {
+
+      },
+        backgroundColor: Colors.lightBlue.shade100,
+        child: Icon(Icons.qr_code,size: 40),),
     );
   }
 }
