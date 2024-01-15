@@ -77,7 +77,6 @@ class _MyAppState extends State<MyApp> {
               primarySwatch: Colors.blue,
               primaryColor: Colors.blueAccent,
               iconTheme: IconThemeData(color: Colors.grey[900]),
-              fontFamily: 'Muli',
               scaffoldBackgroundColor: Colors.grey[100],
               appBarTheme: AppBarTheme(
                 color: Colors.white,

@@ -1,13 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:healthid/pages/bottomBar.dart';
 import 'package:healthid/pages/switchPasge.dart';
-import 'package:healthid/pages/welcome/welcomeScreen.dart';
-import 'package:provider/provider.dart';
-import '../bloc/signInBloc.dart';
-import '../component/next_screen.dart';
-import 'login.dart';
 
 
 class SplashPage extends StatefulWidget {
@@ -16,11 +10,10 @@ class SplashPage extends StatefulWidget {
   _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin{
+class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   void completed() {
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => switchPage()
-        ));
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => switchPage()));
   }
 
   @override
@@ -44,8 +37,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin{
               SizedBox(
                 height: 100,
               ),
-
-             ],
+            ],
           ),
         ));
   }

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:healthid/pages/bottomBar.dart';
+import 'package:healthid/pages/resercher/bottomBar_resercher.dart';
 import 'package:healthid/pages/welcome/welcomeScreen.dart';
 
 import 'doctor/bottomBar_Doctor.dart';
@@ -27,16 +28,17 @@ class _switchPageState extends State<switchPage> {
     // TODO: implement initState
     super.initState();
     _checkCourentUser();
-    FirebaseFirestore.instance
-        .collection('users')
-        .doc(user!.uid)
-        .snapshots()
-        .listen((datasnapshot) {
-      setState(() {
-        switchlogin = datasnapshot.data()!['account'];
+    if (_user != null) {
+      FirebaseFirestore.instance
+          .collection('users')
+          .doc(user!.uid)
+          .snapshots()
+          .listen((datasnapshot) {
+        setState(() {
+          switchlogin = datasnapshot.data()!['account'];
+        });
       });
-    });
-
+    }
   }
 
   void _updateuser(User? user) {
@@ -56,10 +58,14 @@ class _switchPageState extends State<switchPage> {
         return BottomBar();
       }else if (switchlogin == 'doctor') {
         return BottomBar_Doctor();
+      }else if (switchlogin == 'resercher'){
+        return BottomBar_resercher();
       }
 
-      return BottomBar();
-  //    return BottomBar();
+      //    return BottomBar();
+    return Scaffold(
+      body: Center(child: CircularProgressIndicator(),),
+    );
     }
   }
 }

@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:healthid/component/next_screen.dart';
 import 'package:healthid/pages/bottomBar.dart';
+import 'package:healthid/pages/switchPasge.dart';
 
 class FirebaseAuthHelper {
 
@@ -39,7 +40,9 @@ class FirebaseAuthHelper {
         password: password,
       );
       user = userCredential.user;
-      nextScreen(context, BottomBar());
+      if(user!=null) {
+        nextScreen(context, switchPage());
+      }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');

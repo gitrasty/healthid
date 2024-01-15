@@ -10,6 +10,7 @@ import 'package:healthid/component/next_screen.dart';
 import 'package:healthid/pages/HomePage.dart';
 import 'package:healthid/pages/bottomBar.dart';
 import 'package:healthid/pages/signup/login.dart';
+import 'package:healthid/pages/switchPasge.dart';
 import 'package:healthid/windget/textfild.dart';
 
 import '../../windget/textfildPassword.dart';
@@ -303,7 +304,7 @@ class _signupState extends State<signup> {
                                         user!,account:  widget.account,Birthday: selectedDate,city: city);
 
                                     if (user != null) {
-                                      nextScreen(context, HomePage());
+                                      nextScreen(context, switchPage());
                                     }
                                   } else if (selectedDate.toLocal() ==
                                       DateTime.now()) {

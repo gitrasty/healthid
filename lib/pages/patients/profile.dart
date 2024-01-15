@@ -60,7 +60,7 @@ class _profile_patientState extends State<profile_patient> {
               context: context,
               builder: (context) => AlertDialog(
                 title: Text(
-                    'are you logout'),
+                    'are you sure logout'),
                 actions: [
                   TextButton(
                       onPressed: () => _signOut(),

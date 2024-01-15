@@ -1,4 +1,5 @@
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -10,6 +11,7 @@ import 'package:healthid/windget/textfild.dart';
 
 import '../../component/next_screen.dart';
 import '../../windget/textfildPassword.dart';
+import '../switchPasge.dart';
 import '../welcome/DelayedAnimation.dart';
 
 class login extends StatefulWidget {
@@ -22,6 +24,8 @@ class login extends StatefulWidget {
 class _loginState extends State<login> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+
+  String errormessage='';
 
   @override
   Widget build(BuildContext context) {
@@ -150,11 +154,31 @@ class _loginState extends State<login> {
                             child: new Text('Login',
                                 style: new TextStyle(
                                     fontSize: 18.0, color: Colors.white)),
-                            onPressed: () {
-                              FirebaseAuthHelper.signInUsingEmailPassword(
+                            onPressed: ()async {
+                              FirebaseAuth auth = FirebaseAuth.instance;
+                              User? user;
+                              try {
+                                UserCredential userCredential = await auth.signInWithEmailAndPassword(
                                   email: email.text,
                                   password: password.text,
-                                  context: context);
+                                );
+                                user = userCredential.user;
+                                if(user!=null) {
+                                  nextScreen(context, switchPage());
+                                }
+                              } on FirebaseAuthException catch (e) {
+                                if (e.code == 'user-not-found') {
+                                  print('No user found for that email.');
+                                  errormessage='No user found for that email.';
+                                } else if (e.code == 'wrong-password') {
+                                  print('Wrong password provided.');
+                                  errormessage='Wrong password provided.';
+                                }
+                              }
+                              // FirebaseAuthHelper.signInUsingEmailPassword(
+                              //     email: email.text,
+                              //     password: password.text,
+                              //     context: context);
                             },
                           ),
                         ),
@@ -162,6 +186,7 @@ class _loginState extends State<login> {
                       SizedBox(
                         height: 30,
                       ),
+                 errormessage==''?Container():     Center(child: Text(errormessage,style: TextStyle(color: Colors.red,fontSize: 16),textAlign: TextAlign.center,),),
                       Row(
                         children: [
                           Padding(
