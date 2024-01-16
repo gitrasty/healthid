@@ -33,7 +33,7 @@ class _homeDoctorState extends State<homeDoctor> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-      ),
+        automaticallyImplyLeading: false, ),
       body: ListView(
 
         children: [

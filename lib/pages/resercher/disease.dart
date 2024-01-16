@@ -67,7 +67,7 @@ class _diseaseState extends State<disease> {
                   width: 4,
                 ),
                 const Text(
-                  'in Kurdistan',
+                  'in sulaymaniyah',
                   style: TextStyle(color: Color(0xff77839a), fontSize: 16),
                 ),
               ],
@@ -389,7 +389,7 @@ class _diseaseState extends State<disease> {
   }
 
   Widget bottomTitles2(double value, TitleMeta meta) {
-    final titles = <String>['Adenovirus','Yellow Fever','Tonsillitis','Tapeworm'];
+    final titles = <String>['Diabetic ','Blood pressure','Cancer ','Heart disease'];
     //['sulaymaniyah', 'erbil', 'duhok', 'halabja',  ];
 
     final Widget text = Text(

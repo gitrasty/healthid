@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -77,7 +78,7 @@ class _futureState extends State<future> {
            enlargeFactor: 0.3,
             scrollDirection: Axis.horizontal,
          ),
-       items: ['assets/logo.png','assets/images/signup.jpg','assets/images/signup.jpg'].map((i) {
+       items: ['assets/logo.png','assets/images/train.jpg','assets/images/train.jpg'].map((i) {
          return Builder(
            builder: (BuildContext context) {
              return Padding(
@@ -115,7 +116,7 @@ class UserInfo extends StatelessWidget {
         child: Text("Hello!"),
       ),
       subtitle: Text(
-        "Rasty abubakr",
+        "Rastgo abubakr",
         style: Theme.of(context)
             .textTheme
             .headlineSmall!
@@ -522,14 +523,14 @@ List<Servicesdata> servicesList = [
 
 List listAppointment = [
   {
-    'name': 'dr.Ahmed',
+    'name': 'dr. Hiwa jamal',
     'time': '12:40',
     'date': '12/4',
     'subtitle': '',
     'status': false
   },
   {
-    'name': 'dr.Dara',
+    'name': 'dr. Dana Dara ',
     'time': '02:30',
     'date': '20/4',
     'subtitle': '',

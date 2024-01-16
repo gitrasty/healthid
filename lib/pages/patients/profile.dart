@@ -19,7 +19,7 @@ class _profile_patientState extends State<profile_patient> {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-      ),
+        automaticallyImplyLeading: false,  ),
       body: Column(
         children: [
           SizedBox(
@@ -30,9 +30,10 @@ class _profile_patientState extends State<profile_patient> {
             backgroundImage: AssetImage('assets/images/user.png'),
             radius: 50,
           ),
-          Text('Rastgo abubakr'),
+          SizedBox(height: 10,),
+          Text('Rastgo abubakr',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
           SizedBox(
-            height: 50,
+            height: 30,
           ),
           Divider(),
           ListTile(

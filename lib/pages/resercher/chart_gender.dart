@@ -47,7 +47,7 @@ class genderState extends State {
   }
 
   List<PieChartSectionData> showingSections() {
-    return List.generate(3, (i) {
+    return List.generate(2, (i) {
       final isTouched = i == touchedIndex;
       final fontSize = isTouched ? 20.0 : 16.0;
       final radius = isTouched ? 110.0 : 100.0;
@@ -59,7 +59,7 @@ class genderState extends State {
           return PieChartSectionData(
             color: Colors.lightBlue,
             value: 40,
-            title: '40%',
+            title: '60%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
@@ -68,7 +68,7 @@ class genderState extends State {
               shadows: shadows,
             ),
             badgeWidget: _Badge(
-              Icon(FontAwesomeIcons.baby),
+              Icon(FontAwesomeIcons.venus),
               size: widgetSize,
               borderColor: Colors.black,
             ),
@@ -78,7 +78,7 @@ class genderState extends State {
           return PieChartSectionData(
             color: Colors.yellow,
             value: 30,
-            title: '30%',
+            title: '40%',
             radius: radius,
             titleStyle: TextStyle(
               fontSize: fontSize,
@@ -87,31 +87,31 @@ class genderState extends State {
               shadows: shadows,
             ),
             badgeWidget: _Badge(
-              Icon(FontAwesomeIcons.personDress),
+              Icon(FontAwesomeIcons.mars),
               size: widgetSize,
               borderColor:Colors.black,
             ),
             badgePositionPercentageOffset: .98,
           );
-        case 2:
-          return PieChartSectionData(
-            color:Colors.purple,
-            value: 16,
-            title: '16%',
-            radius: radius,
-            titleStyle: TextStyle(
-              fontSize: fontSize,
-              fontWeight: FontWeight.bold,
-              color: const Color(0xffffffff),
-              shadows: shadows,
-            ),
-            badgeWidget: _Badge(
-              Icon(FontAwesomeIcons.person),
-              size: widgetSize,
-              borderColor:Colors.black,
-            ),
-            badgePositionPercentageOffset: .98,
-          );
+        // case 2:
+        //   return PieChartSectionData(
+        //     color:Colors.purple,
+        //     value: 16,
+        //     title: '16%',
+        //     radius: radius,
+        //     titleStyle: TextStyle(
+        //       fontSize: fontSize,
+        //       fontWeight: FontWeight.bold,
+        //       color: const Color(0xffffffff),
+        //       shadows: shadows,
+        //     ),
+        //     badgeWidget: _Badge(
+        //       Icon(FontAwesomeIcons.person),
+        //       size: widgetSize,
+        //       borderColor:Colors.black,
+        //     ),
+        //     badgePositionPercentageOffset: .98,
+        //   );
         // case 3:
         //   return PieChartSectionData(
         //     color: Colors.green,

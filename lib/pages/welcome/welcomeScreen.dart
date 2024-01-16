@@ -42,7 +42,8 @@ class _welcomeScreenState extends State<welcomeScreen>
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: backgroundColor, //Color(0xFF8185E2),
+          backgroundColor://Color(0xFF106F95),
+          backgroundColor,
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

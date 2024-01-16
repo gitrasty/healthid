@@ -17,7 +17,7 @@ class _servicePageState extends State<servicePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-appBar: AppBar(),
+appBar: AppBar(automaticallyImplyLeading: false,),
       body: SafeArea(
         child: ListView(
           children: [

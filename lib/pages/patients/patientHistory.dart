@@ -18,7 +18,7 @@ class _patientHistoreState extends State<patientHistore> {
   // Allergy /Immunization date
   List patientHistore=[
     {
-      'name':'patientHistore',
+      'name':'patient history',
       'namelab':'Health ID',
       'datetime':'1/1/2024'
     },

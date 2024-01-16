@@ -17,7 +17,7 @@ class _homeResercherState extends State<homeResercher> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(automaticallyImplyLeading: false,),
       body: ListView(children: [
         disease(),
         gender()
